@@ -1,0 +1,48 @@
+.dropzone{
+    background-image: url('../../assets/images/3411083.jpg');
+    background-size: 35%;
+    text-align: left;
+    background-position:right;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    width: 700px;
+}
+.thumbnail_container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+.thumbnail_container .thumbnail_item{
+    width: 48%;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.thumbnail_item img{
+    max-width: 100%;
+}
+input{
+    min-height: 50px;
+}
+textarea{
+    min-height: 150px;
+}
+select{
+    padding: 10px;
+    box-sizing: border-box;
+}
+select option{
+    padding: 10px !important;
+    margin: 10px;
+}
+.button_upload{
+    padding: 0 20px;
+}
+.select_container{
+    display: flex;
+    justify-content: space-between;
+}
+.container{
+    background-color: #f1dfd1;
+background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
+}

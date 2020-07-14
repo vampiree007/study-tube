@@ -1,0 +1,35 @@
+.side_panel{
+    padding: 0 40px;
+}
+
+.sideHeading{
+    margin-top: 40px;
+    padding-bottom: 10px;
+    border-bottom: .5px solid gray;
+    margin-bottom: 20px ;
+}
+.sideCard{
+    margin-bottom: 15px;
+}
+.sideVideoCard-data span{
+    color: gray;
+}
+.sideVideoCard{
+    display: flex;
+}
+.sideVideoCard img{
+    width: 45%;
+    height: 100px;
+}
+.sideVideoCard .sideVideoCard-data{
+    width: 55%;
+    padding-left: 10px;
+}
+.sideVideoCard h2{
+    line-height: normal;
+    font-size: 14px;
+}
+.sideVideoCard .flex_box{
+ display: flex;
+ justify-content: space-between;
+}
