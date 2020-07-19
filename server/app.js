@@ -6,6 +6,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const path = require('path');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -59,9 +60,12 @@ app.use('/api/v1/video', videoRoutes);
 app.use('/api/v1/subscribe', subscribeRoutes);
 app.use('/api/v1/comment', commentRoutes);
 app.use('/api/v1/like', likeRoutes);
-
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname,"../client", "build", "index.html"))
+})
 
 app.use('/uploads', express.static('uploads'));
+app.use(express.static(path.join(__dirname, "../client", "build")))
 // All Other Undefined Routes
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
