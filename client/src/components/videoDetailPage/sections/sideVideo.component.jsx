@@ -27,7 +27,7 @@ function SideVideo(){
                                 <img src={`http://localhost:5000/${video.thumbnail}`} alt={index}/>
                                 <div className="sideVideoCard-data">
                                     <span className="title"><h2>{video.title}</h2></span>
-                                    <span className="writor">{video.writor}</span>
+                                    <span className="writor">{video.writer.firstName} {video.writer.lastName}</span>
                                     <div className="flex_box">
                                         <span className="views">{video.views}views</span>
                                         <span className="time"> {`${moment(video.createdOn- Date.now()).minutes()}`} ago</span>

@@ -60,12 +60,11 @@ app.use('/api/v1/video', videoRoutes);
 app.use('/api/v1/subscribe', subscribeRoutes);
 app.use('/api/v1/comment', commentRoutes);
 app.use('/api/v1/like', likeRoutes);
+app.use('/uploads', express.static('uploads'));
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname,"../client", "build", "index.html"))
 })
-
-app.use('/uploads', express.static('uploads'));
-app.use(express.static(path.join(__dirname, "../client", "build")))
+//app.use(express.static(path.join(__dirname, "../client", "build")))
 // All Other Undefined Routes
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
