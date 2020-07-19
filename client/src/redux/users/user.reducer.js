@@ -9,13 +9,14 @@ const userReducer = (state = INITIAL_STATE, action) => {
         case 'LOGIN_USER' :
             return {
                 ...state,
-                currentUser: action.payload.data,
-                isAuth: action.payload.data.isAuth
+                currentUser: action.payload.data.user,
+                isAuth: action.payload.isAuth
             }
         case 'SIGNUP_USER' :
             return {
                 ...state,
-                currentUser: action.payload
+                currentUser: action.payload,
+                isAuth: action.payload.isAuth
             }
         case 'AUTH_USER':
             return {...state, 

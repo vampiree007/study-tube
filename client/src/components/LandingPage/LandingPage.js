@@ -24,13 +24,12 @@ function LandingPage() {
 
 
 
-
     const renderCards = Videos.map((video, index) => {
-
+        console.log(video.writer)
         var minutes = Math.floor(video.duration / 60);
         var seconds = Math.floor(video.duration - minutes * 60);
 
-        return <Col lg={6} md={8} xs={24} key={index}>
+        return <Col style={{marginBottom:'30px'}} lg={6} md={8} xs={24} key={index}>
             <div style={{ position: 'relative' }}>
                 <Link to={`/video/${video._id}`} >
                 <img style={{ width: '100%' }} alt="thumbnail" src={`http://localhost:5000/${video.thumbnail}`} />
@@ -45,15 +44,20 @@ function LandingPage() {
             </div><br />
             <Meta
                 avatar={
-                    <Avatar src={video.writer.image} />
+                    <Avatar size="large" className="teal_color" 
+                    src={video.writer && video.writer.image}
+                    style={{fontWeight:'600', fontSize:'17px'}}>
+                        {video.writer.firstName.split('')[0].toUpperCase()}
+                    </Avatar>
                 }
                 title={video.title}
             />
-            <span>{video.writer.name} </span><br />
-            <span style={{ marginLeft: '3rem' }}> {video.views}</span>
-            - <span> {moment(video.createdAt).format("MMM Do YY")} </span>
+            <div>
+            <span style={{textTransform:'capitalize'}}>{video.writer.firstName} {video.writer.lastName} </span><br />
+            <span style={{ marginLeft: '3.5rem' }}> {video.views} views</span>
+            &nbsp; <span style={{fontWeight:'800'}}>&#183;</span> &nbsp;<span>{moment(video.createdAt).format("MMM Do YY")} </span>
+            </div>
         </Col>
-
     })
 
 

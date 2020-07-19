@@ -8,7 +8,7 @@
   background-color: white;
 }
 .menu__container{
-  height: 73.3px;
+  height: 43.3px;
 }
 .menu_left{
   height: 73.3px;
@@ -55,14 +55,16 @@
 .menu__container .menu_rigth {
   float: right;
 }
-
+.appstore{
+  width: 20px;
+  font-size: 25px;
+}
 .menu__mobile-button {
   float: right;
   height: 32px;
   padding: 6px;
-  margin-top: 8px;
   display: none !important; /* use of important to overwrite ant-btn */
-  background: #3e91f7;
+  border: none;
 }
 
 .menu_drawer .ant-drawer-body {
@@ -82,15 +84,16 @@
   .menu_left,
   .menu_rigth {
     display: none;
+    padding-top: 20px;
   }
 
   .menu__logo a {
-    margin-left: -20px;
+    margin-left: -90px;
   }
 
   .menu__container .ant-menu-item,
   .menu__container .ant-menu-submenu-title {
-    padding: 1px 20px;
+    padding: 5px 10px;
   }
 
   .menu__logo a {

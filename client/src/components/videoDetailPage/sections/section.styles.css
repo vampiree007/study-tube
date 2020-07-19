@@ -1,0 +1,44 @@
+.subscribe-button{
+    background-color: #CC0000;
+    padding:   1px 17px;
+    padding-top: 7px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.subscribe-button h4{
+    color: white;
+    text-transform: uppercase;
+}
+.bottom_info{
+    border-top: 1.2px solid rgb(204, 204, 204);
+    position: relative;
+    padding-top: 10px;
+    justify-content: space-between; 
+}
+.channel_info{
+    margin-top: 10px;
+}
+.writer_name{
+    text-transform: capitalize;
+    margin-left: 20px;
+    color: darkslategrey;
+    font-weight: 500;
+}
+.subscribers_count{
+    position: absolute;
+    left: 60px;
+    top: 40px;
+    font-size: 13.6px;
+    color: dimgrey;
+}
+.bottom_description{
+    margin: 25px;
+    margin-left: 57px;
+    border-bottom: 1.2px solid rgb(204, 204, 204);
+    padding-bottom: 10px;
+}
+.bottom_description p{
+    color: #353535;
+    line-height: 21px;
+}

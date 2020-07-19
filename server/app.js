@@ -13,10 +13,12 @@ const globalErrorHandler = require('./controllers/errorController');
 // All Routes Imported Here
 const userRoutes = require('./routes/userRoutes');
 const videoRoutes = require('./routes/videoRoutes');
+const subscribeRoutes = require('./routes/subscribeRoutes');
+const commentRoutes = require('./routes/commentRoutes');
+const likeRoutes = require('./routes/likeRoutes');
 
 const app = express();
 // 1) GLOBAL MIDDLEWARES
-
 // Set security HTTP headers
 app.use(helmet());
 
@@ -54,6 +56,10 @@ app.use((req, res, next) => {
 // All Routes Here
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/video', videoRoutes);
+app.use('/api/v1/subscribe', subscribeRoutes);
+app.use('/api/v1/comment', commentRoutes);
+app.use('/api/v1/like', likeRoutes);
+
 
 app.use('/uploads', express.static('uploads'));
 // All Other Undefined Routes

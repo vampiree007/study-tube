@@ -8,7 +8,7 @@ const videoSchema = new mongoose.Schema({
     },
     title: {
         type:String,
-        maxlength:50,
+        maxlength:100,
     },
     description: {
         type: String,
@@ -29,8 +29,12 @@ const videoSchema = new mongoose.Schema({
     },
     thumbnail: {
         type: String
+    },
+    createdOn: {
+        type: Number,
+        default: Date.now()
     }
-}, { timestamps: true })
+},{timestamps: true})
 
 
 const Video = mongoose.model('Video', videoSchema);

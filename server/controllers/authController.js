@@ -30,9 +30,10 @@ const createSendToken = (user, statusCode, res) => {
   res.status(statusCode).json({
     status: 'success',
     token,
+    isAuth: true,
+    _id: user._id,
     data: {
-      user,
-      isAuth: true
+      user
     }
   });
 };
@@ -251,8 +252,13 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 });
 
 exports.auth = catchAsync(async (req, res, next) => {
-  //console.log(req.cookies)
   // 1) Getting token and check of it's there
+  if(!req.cookies.jwt){
+    return res.status(201).json({
+      status: 'fail',
+      message: 'no cookies found'
+    })
+  }
   let token;
   if (
     req.headers.authorization &&
@@ -261,17 +267,6 @@ exports.auth = catchAsync(async (req, res, next) => {
     token = req.headers.authorization.split(' ')[1];
   } else if (req.cookies.jwt) {
     token = req.cookies.jwt;
-  }
-  if (!token) {
-    // return next(
-    //   new AppError(
-    //     'The user belonging to this token does no longer exist.',
-    //     401
-    //   )
-    // );
-    return res.status(200).json({
-      isAuth: false
-    })
   }
 
   // 2) Verification token

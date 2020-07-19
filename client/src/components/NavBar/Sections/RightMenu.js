@@ -1,20 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import {Link} from 'react-router-dom';
-import React, {useState} from 'react';
+import React from 'react';
 import { Menu } from 'antd';
-import axios from 'axios';
-import { USER_SERVER } from '../../config';
 import { withRouter } from 'react-router-dom';
 import { useSelector, connect } from "react-redux";
-import {auth, logoutUser} from '../../../redux/users/user.actions'
+import {logoutUser} from '../../../redux/users/user.actions'
 const Upload = require('../../../assets/images/upload.png');
 
 
 function RightMenu(props) {
   const user = useSelector(state => state.user)
-  console.log(user.currentUser)
+  //console.log(user.currentUser)
 
-  console.log(user)
+  //console.log(user)
     if(user.isAuth === true) {
       return (
         <Menu mode={props.mode}>

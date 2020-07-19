@@ -73,7 +73,6 @@ class SignIn extends React.Component {
             }
             this.props.dispatch(loginUser(dataToSubmit))
             .then(response => {
-              console.log(response.payload)
                 if(response.payload.status === 'success'){
                     window.setTimeout(() => {
                         this.props.history.push('/');
@@ -82,7 +81,7 @@ class SignIn extends React.Component {
                     this.setState({error: ['OOPS!' + response.payload.message]})
                 }
             })
-            .catch((err)=> this.setState({error: ['OOPS! ' + `Incorrect Email Passowrd Combination`]}) )
+            .catch((err)=> this.setState({error: ["Incorrect Email and Password Combination"]}) )
     }
 
     handleChange = (event) => {

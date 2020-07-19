@@ -1,15 +1,37 @@
-.side_panel{
-    padding: 0 40px;
+.postPage{
+    padding: 3rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
 }
-
+.side_panel{
+    padding: 0 20px;
+}
+.side_panel .ad_img{
+    margin-top: 33px;
+}
+.display_flex{
+    display: flex;
+}
+.videoTitle{
+    text-transform: capitalize;
+    font-size: 19px;
+}
+.channel_data{
+    margin-top: -7px;
+    display: flex;
+    justify-content: space-between;
+}
+.channel_data .child{
+    text-transform: capitalize;
+    cursor: pointer;
+}
 .sideHeading{
-    margin-top: 40px;
+    margin-top: 10px;
     padding-bottom: 10px;
     border-bottom: .5px solid gray;
-    margin-bottom: 20px ;
 }
 .sideCard{
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 .sideVideoCard-data span{
     color: gray;
@@ -19,7 +41,7 @@
 }
 .sideVideoCard img{
     width: 45%;
-    height: 100px;
+    height: 120px;
 }
 .sideVideoCard .sideVideoCard-data{
     width: 55%;
@@ -33,3 +55,12 @@
  display: flex;
  justify-content: space-between;
 }
+
+@media only screen and (max-width: 600px) {
+    .postPage {
+      padding: 1rem !important;
+    }
+    .side_panel .ad_img{
+        margin-top: 0px;
+    }
+  }

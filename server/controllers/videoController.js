@@ -48,11 +48,12 @@ exports.fileHandler = (req, res) => {
 //video-Filepath, name, video-duration, writer information comes from the front end/////
 ////////////////////////////////////////////////////////////////////////////////////////
 exports.videoUpload = catchAsync(async (req, res) => {
-
-    const video =  await Video.create(req.body)
-
-    return res.status(200).json({
-        success: true 
+    //console.log(req.body)
+    const video =  await Video.create(req.body, function(err, result) {
+        if (err) return console.log(err)
+        return res.status(200).json({
+            success: true 
+        })
     })
 
 })
@@ -60,14 +61,19 @@ exports.videoUpload = catchAsync(async (req, res) => {
 //This can be used to generate thumbnail from video saved, call it after video upload///
 ////////////////////////////////////////////////////////////////////////////////////////
 exports.getAllVideos = async(req, res, next) => {
-    const videos = await Video.find()
+    const videos = await Video.find().populate({
+        path: 'writer',
+      })
+    //console.log(videos);
     res.status(200).json({
         success: 'true',
         videos
     })
 }
 exports.getVideo = async(req, res, next) => {
-    const video = await Video.find({"_id": req.params.videoId})
+    const video = await Video.find({"_id": req.params.videoId}).populate({
+        path: 'writer',
+      })
     res.status(200).json({
         success: 'true',
         video

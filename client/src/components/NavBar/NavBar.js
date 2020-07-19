@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import LeftMenu from './Sections/LeftMenu';
 import RightMenu from './Sections/RightMenu';
 import { Drawer, Button } from 'antd';
-import { SmileOutlined } from '@ant-design/icons';
+import {AppstoreOutlined} from '@ant-design/icons';
 import './Sections/Navbar.css';
 const Logo = require('../../assets/images/panda.jpg');
 
@@ -31,13 +31,12 @@ function NavBar() {
         </div>
         <Button
           className="menu__mobile-button"
-          type="primary"
           onClick={showDrawer}
         >
-          <SmileOutlined type="align-right" />
+        <AppstoreOutlined type="align-right" className="appstore"/>
         </Button>
         <Drawer
-          title="Basic Drawer"
+          title="Panda Tube"
           placement="right"
           className="menu_drawer"
           closable={false}

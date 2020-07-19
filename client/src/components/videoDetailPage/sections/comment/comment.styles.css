@@ -1,0 +1,107 @@
+.comment_plugin .comment_count{
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+}
+.comment_count .count{
+    color: #030303;
+}
+.comment_count .sort{
+    color: dimgrey;
+    margin-left: 30px;
+    font-weight: 500;
+}
+.create_comment{
+    margin-top: 26px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.create_comment form{
+    width: 100%;
+}
+.create_comment .input_comment{
+    outline: none;
+    border: none;
+    margin-left: 15px;
+    width: 95% !important;
+    min-height: 25px !important;
+    border-bottom: .8px solid #dadadac0;
+}
+.create_comment .input_comment:focus{
+    border-bottom: .6px solid #030303c0;
+}
+.submit_comment{
+    margin-top: 6px;
+    background-color: #CCCCCC;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    width: 120px;
+    height: 37px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: 14px;
+}
+.cancel_button{
+    background-color: #ffffff !important;
+    color: rgb(110, 110, 110);
+}
+.cancel_button:hover{
+    color: teal;
+}
+.avatar{
+    min-width: 39px;
+    font-weight: 600 !important;
+    font-size: 17px !important;
+}
+.tango_color{
+    background-color: rgb(223, 0, 104) !important;
+}
+.teal_color{
+    background-color: #065fd4 !important;
+}
+
+.replies{
+    margin-left: 20px;
+}
+.comment_button{
+    display: flex;
+    justify-content: flex-end;
+}
+.blue_button{
+    background-color: #065fd4;
+}
+.comments{
+    padding-top: 16px;
+}
+.comment{
+    margin-bottom: 25px;
+}
+.commentor_data{
+    font-size: 13.4px;
+    line-height: 18px;
+    font-weight: 500;
+    margin-left: 12px;
+    margin-top: 2px;
+}
+.commentor_name{
+    color: #030303;
+    margin-right: 10px;
+    text-transform: capitalize;
+}
+.commentor_comment{
+    margin-left: 10px;
+    margin-top: 6px;
+}
+.commentor_comment p{
+    color: #3b3b3b;
+}
+.comment .reply{
+    font-weight: 500;
+    margin-left: 10px;
+    color: rgb(146, 146, 146);
+    cursor: pointer;
+    display: inline-block;
+}
