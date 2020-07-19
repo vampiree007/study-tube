@@ -18,6 +18,8 @@ const subscribeRoutes = require('./routes/subscribeRoutes');
 const commentRoutes = require('./routes/commentRoutes');
 const likeRoutes = require('./routes/likeRoutes');
 
+app.use(express.static("client/build"));
+
 const app = express();
 // 1) GLOBAL MIDDLEWARES
 // Set security HTTP headers
@@ -64,7 +66,6 @@ app.use('/uploads', express.static('uploads'));
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname,"../client", "build", "index.html"))
 })
-app.use(express.static("client/build"))
 // All Other Undefined Routes
 // app.all('*', (req, res, next) => {
 //   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
