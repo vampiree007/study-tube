@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "starts": "nodemon server/index.js",
     "start": "node server/index.js",
+    "starts": "nodemon server/index.js",
     "backend": "cross-env NODE_ENV=development nodemon server/index.js",
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
