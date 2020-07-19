@@ -16,7 +16,7 @@ function DetailVideoPage(props) {
 
     useEffect(() => {
         let isCancelled = false;
-        axios.get(`http://localhost:5000/api/v1/video/getVideo/${videoId}`)
+        axios.get(`http://localhost:8000/api/v1/video/getVideo/${videoId}`)
         .then(response => {
             if(response.data.success === 'true') {
                 if(!isCancelled) setVideo(response.data.video[0])

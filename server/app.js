@@ -66,9 +66,9 @@ app.get("*", (req, res) => {
 })
 app.use(express.static("client/build"))
 // All Other Undefined Routes
-app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
-});
+// app.all('*', (req, res, next) => {
+//   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+// });
 
 app.use(globalErrorHandler);
 
