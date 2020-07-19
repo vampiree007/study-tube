@@ -10,6 +10,7 @@
   },
   "author": "vikrant",
   "license": "ISC",
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
     "bcryptjs": "^2.4.3",
