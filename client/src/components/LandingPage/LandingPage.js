@@ -3,6 +3,10 @@ import { Card, Avatar, Col, Typography, Row } from 'antd';
 import axios from 'axios';
 import moment from 'moment';
 import {Link} from 'react-router-dom';
+import Sidebar from './sidebar/sidebar.componnt';
+import NavBar from '../NavBar/NavBar';
+import LabelBottomNavigation from './bottomnaviation/bottomnavigation.component';
+import './landingpage.styles.css';
 const { Title } = Typography;
 const { Meta } = Card;
 function LandingPage() {
@@ -10,7 +14,7 @@ function LandingPage() {
     const [Videos, setVideos] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/v1/video')
+        axios.get('/api/v1/video')
             .then(response => {
                 if (response.data.success) {
                     //console.log(response.data.videos)
@@ -25,7 +29,6 @@ function LandingPage() {
 
 
     const renderCards = Videos.map((video, index) => {
-        console.log(video.writer)
         var minutes = Math.floor(video.duration / 60);
         var seconds = Math.floor(video.duration - minutes * 60);
 
@@ -63,13 +66,40 @@ function LandingPage() {
 
 
     return (
-        <div style={{ width: '85%', margin: '3rem auto' }}>
-            <Title level={2} > Recommended </Title>
-            <hr />
+        <div>
+            <div style={{display:'flex'}}>
+            <Sidebar />
+            <div style={{ width: '91%', margin:'0 auto' }}>
+                <NavBar/>
+                <div style={{margin: '.8rem auto' }}>
+                <div className="categories">
+                    <div className="category">
+                        All
+                    </div>
+                    <div className="category">
+                        Javascript
+                    </div>
+                    <div className="category">
+                        Javascript
+                    </div>
+                    <div className="category">
+                        Javascript
+                    </div>
+                    <div className="category">
+                        Javascript
+                    </div><div className="category">
+                        Javascript
+                    </div>
+                </div>
+                <Title level={4} > Recommended </Title>
 
-            <Row gutter={16}>
-                {renderCards}
-            </Row>
+                <Row gutter={16}>
+                    {renderCards}
+                </Row>
+            </div>
+            </div>
+            <LabelBottomNavigation/>
+            </div>
         </div>
     )
 }

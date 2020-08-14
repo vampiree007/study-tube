@@ -8,7 +8,7 @@ function SideVideo(){
     const [sideVideos, setAllVideo] = useState([])
     
     useEffect(() => {
-            axios.get(`http://localhost:8000/api/v1/video`)
+            axios.get(`/api/v1/video`)
                 .then(response => {
                 if(response.data.success) {
                     setAllVideo(response.data.videos)
@@ -19,12 +19,12 @@ function SideVideo(){
     }, [])
     const SideVideoItem = sideVideos.map((video, index) => {
         return(
-            <div>
-                <div className="sideCard" key={video._id}>
+            <div key={video._id}>
+                <div className="sideCard">
                     <img src="" alt=""/>
                         <Link to={`/video/${video._id}`}>
                             <div className="sideVideoCard">
-                                <img src={`http://localhost:8000/${video.thumbnail}`} alt={index}/>
+                                <img src={`http://localhost:5000/${video.thumbnail}`} alt={index}/>
                                 <div className="sideVideoCard-data">
                                     <span className="title"><h2>{video.title}</h2></span>
                                     <span className="writor">{video.writer.firstName} {video.writer.lastName}</span>

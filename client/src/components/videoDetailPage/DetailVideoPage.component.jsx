@@ -8,6 +8,8 @@ import LikeDislike from './sections/likeDislike/likeDislike.component'
 import axios from 'axios';
 import SideVideo from './sections/sideVideo.component';
 import Spinner from '../spinner/spinner.component';
+import NavBar from '../NavBar/NavBar';
+import LabelBottomNavigation from '../LandingPage/bottomnaviation/bottomnavigation.component'
 
 
 function DetailVideoPage(props) {
@@ -16,7 +18,7 @@ function DetailVideoPage(props) {
 
     useEffect(() => {
         let isCancelled = false;
-        axios.get(`http://localhost:8000/api/v1/video/getVideo/${videoId}`)
+        axios.get(`/api/v1/video/getVideo/${videoId}`)
         .then(response => {
             if(response.data.success === 'true') {
                 if(!isCancelled) setVideo(response.data.video[0])
@@ -36,6 +38,8 @@ function DetailVideoPage(props) {
     if(Video.filePath){
         return (
             <Row style={{paddingBottom:'30px'}}>
+                <LabelBottomNavigation/>
+                <NavBar />
                 <Col lg={15} xs={24} key={Video._id}>
                     <div className="postPage" style={{ width: '100%', paddingBottom:'1rem' }}>
                         <video style={{ width: '100%' }} src={`http://localhost:5000/${Video.filePath}`} controls></video>

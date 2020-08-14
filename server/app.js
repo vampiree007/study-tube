@@ -18,9 +18,8 @@ const subscribeRoutes = require('./routes/subscribeRoutes');
 const commentRoutes = require('./routes/commentRoutes');
 const likeRoutes = require('./routes/likeRoutes');
 
-app.use(express.static("client/build"));
-
 const app = express();
+app.use(express.static("client"));
 // 1) GLOBAL MIDDLEWARES
 // Set security HTTP headers
 app.use(helmet());

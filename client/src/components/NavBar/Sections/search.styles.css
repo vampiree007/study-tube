@@ -1,0 +1,36 @@
+.searchBar form{
+    display: flex;
+    padding-top: 18px;
+}
+#searchBar{
+    width: 572px;
+    outline: none;
+    border: none;
+    border: 1px solid #ddd;
+    min-height: 30px;
+    max-height: 32px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.searchBar button{
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    width: 62px;
+    border: 1px solid #ddd;
+    border-left: none;
+}
+@media (max-width: 767px) {
+    .searchBar form{
+        padding: 7px;
+    }
+    #searchBar{
+        width: 80% !important;
+    }
+
+}

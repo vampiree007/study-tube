@@ -17,7 +17,7 @@
   width: 150px;
   float: left;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .menu__logo a {
@@ -80,7 +80,7 @@
   .menu__mobile-button {
     display: inline-block !important;
   }
-
+  
   .menu_left,
   .menu_rigth {
     display: none;
@@ -88,7 +88,7 @@
   }
 
   .menu__logo a {
-    margin-left: -90px;
+    margin-left: -35px;
   }
 
   .menu__container .ant-menu-item,

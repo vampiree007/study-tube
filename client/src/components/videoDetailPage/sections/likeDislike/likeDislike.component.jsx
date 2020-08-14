@@ -9,47 +9,44 @@ function LikeDislikes(props) {
     const [Dislikes, setDislikes] = useState(0)
     const [LikeAction, setLikeAction] = useState(null)
     const [DislikeAction, setDislikeAction] = useState(null)
-    console.log(LikeAction, DislikeAction)
 
-    const {videoId, commentId} = props
-    let token;
-    if(videoId) token = {postId: videoId}
-    if(commentId) token = {commentId}
-    console.log(token)
+    
 
     useEffect(() => {
-        
+        const {videoId, commentId} = props
+        let token;
+        if(videoId) token = {postId: videoId}
+        if(commentId) token = {commentId}
         if(token){
             Axios.post(`/api/v1/like/getLikesAndDislikes`, token)
             .then(response => {
-                console.log('getLikes',response.data.likeCounts);
-                console.log('getDislikes',response.data.dislikeCounts);
                 if (response.data.status === 'success') {
                     setLikes(response.data.likeCounts.length)
                     setDislikes(response.data.dislikeCounts.length)
                     response.data.likeCounts.map(like => {
                         if(user !== null){
                             if (like.userId === user._id) {
-                                setLikeAction('liked')
+                                setLikeAction('liked');
                             }
                         }
+                        return null
                     });
                     response.data.dislikeCounts.map(like => {
-                        console.log(like)
                         if(user !==null){
                             if (like.userId === user._id) {
                                 setDislikeAction('disliked')
                             }
                         }
-                        return false
+                            return null
                     })
                 } else {
                     console.log('Failed to get likes')
+                    return null
                 }
             })
 
         }
-    }, [])
+    }, [props, user])
 
     const makeChoice = async(choiceType) => {
         if(user === null) return alert('login to like or dislike');
