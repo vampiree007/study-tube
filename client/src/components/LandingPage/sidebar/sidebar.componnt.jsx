@@ -10,9 +10,9 @@ const Sidebar = () => {
     return (
         <div>
             <div className="sidebar">
-                <div className="sidebar_toggle">
+                {/* <div className="sidebar_toggle">
                     <div className="box-shadow-menu" />
-                </div>
+                </div> */}
                 <div className="sidebar_icon_container">
                 <div className="icon">
                 <Link to="/"><HomeIcon className="the_icon" /><p>Home</p></Link>

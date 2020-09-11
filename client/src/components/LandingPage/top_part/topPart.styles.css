@@ -1,0 +1,38 @@
+.landing_page_top{
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.video_part{
+    height: 310px;
+    width: 65%;
+}
+.video_part video{
+    height: 100%;
+    width: 95%;
+    background-color: black;
+}
+.adds_part{
+    width: 35%;
+}
+.adds_part img{
+    width: 100%;
+}
+
+@media (max-width:700px){
+    .video_part video{
+        width: 100%;
+        height: auto;
+    }
+    .video_part{
+        width: 100%;
+    }
+    .adds_part{
+        width: 100%;
+        margin-top: -40px;
+    }
+    .adds_part img:first-child{
+        margin-bottom: 10px;
+    }
+}

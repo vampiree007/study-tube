@@ -39,7 +39,6 @@ function DetailVideoPage(props) {
         return (
             <Row style={{paddingBottom:'30px'}}>
                 <LabelBottomNavigation/>
-                <NavBar />
                 <Col lg={15} xs={24} key={Video._id}>
                     <div className="postPage" style={{ width: '100%', paddingBottom:'1rem' }}>
                         <video style={{ width: '100%' }} src={`http://localhost:5000/${Video.filePath}`} controls></video>

@@ -33,6 +33,7 @@ function App (props) {
      if(loading === true){
       return ( 
         <div className="App">
+          <NavBar/>
           <Switch>
             <Route exact path={`/login`} component={AuthCheck(SignIn, 'noAuth', false)} />
             <Route exact path={`/register`} component={AuthCheck(SignUp, 'noAuth', false)} />

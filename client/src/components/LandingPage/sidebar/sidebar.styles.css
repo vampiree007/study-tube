@@ -36,7 +36,9 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+    margin-top: 24px;
 }
+
 .sidebar_icon_container p{
     font-size: 10px;
     color:rgb(105, 105, 105);

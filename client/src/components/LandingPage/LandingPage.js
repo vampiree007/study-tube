@@ -4,8 +4,8 @@ import axios from 'axios';
 import moment from 'moment';
 import {Link} from 'react-router-dom';
 import Sidebar from './sidebar/sidebar.componnt';
-import NavBar from '../NavBar/NavBar';
 import LabelBottomNavigation from './bottomnaviation/bottomnavigation.component';
+import TopPart from './top_part/topPart.component';
 import './landingpage.styles.css';
 const { Title } = Typography;
 const { Meta } = Card;
@@ -70,7 +70,7 @@ function LandingPage() {
             <div style={{display:'flex'}}>
             <Sidebar />
             <div style={{ width: '91%', margin:'0 auto' }}>
-                <NavBar/>
+                
                 <div style={{margin: '.8rem auto' }}>
                 <div className="categories">
                     <div className="category">
@@ -87,10 +87,20 @@ function LandingPage() {
                     </div>
                     <div className="category">
                         Javascript
+                    </div>
+                    <div className="category">
+                        Javascript
+                    </div>
+                    <div className="category">
+                        Javascript
+                    </div>
+                    <div className="category">
+                        Javascript
                     </div><div className="category">
                         Javascript
                     </div>
                 </div>
+                <TopPart video={Videos[0]}/>
                 <Title level={4} > Recommended </Title>
 
                 <Row gutter={16}>
